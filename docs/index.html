@@ -1,45 +1,750 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
-:root{--guinda:#611232;--guinda-dark:#421020;--gold:#bc955c;--ink:#262626;--muted:#626262;--paper:#f5f4f1;--line:#e3e0da;--card:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:2rem}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.6}
-h1,h2,h3,h4,.brand{font-family:Montserrat,Inter,Arial,sans-serif}
-a{color:inherit}
-a:focus-visible,input:focus-visible{outline:3px solid #bf8f45;outline-offset:3px}
-.top{background:#fff;color:var(--ink);border-top:5px solid var(--guinda);border-bottom:1px solid var(--line);box-shadow:0 3px 14px #24121a12}
-.top-inner{max-width:1240px;min-height:82px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{color:var(--guinda);font-weight:800;letter-spacing:.02em;line-height:1.25}
-.brand small{display:block;margin-bottom:3px;color:#82613a;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:10px}
-.top-link{color:#fff;background:var(--guinda);text-decoration:none;border:1px solid var(--guinda);border-radius:4px;padding:10px 15px;font-size:12px;font-weight:800;transition:background .15s ease}
-.top-link:hover,.top-link:focus{background:var(--guinda-dark)}
-.wrap{width:min(1160px,calc(100% - 36px));margin:30px auto 56px}
-.crumbs{font-size:12px;color:var(--muted);margin:0 0 16px}
-.crumbs a{color:var(--guinda);font-weight:700;text-decoration:none}
-.crumbs a:hover{text-decoration:underline}
-.hero{background:#fff;border:1px solid var(--line);border-left:5px solid var(--guinda);border-radius:6px;padding:26px 28px;box-shadow:0 8px 24px #1822300c}
-.eyebrow{color:#82613a;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.hero h1{font-size:clamp(23px,4vw,34px);line-height:1.18;margin:8px 0;color:var(--guinda)}
-.hero p{max-width:780px;color:var(--muted);font-size:14px;margin:0}
-.count{display:inline-flex;margin-top:16px;padding:6px 11px;background:#f4f0eb;color:var(--guinda);border-radius:4px;font-size:11px;font-weight:800}
-.tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 14px}
-.tools label{font-weight:700;color:var(--guinda);font-size:13px}
-.search{width:min(360px,100%);border:1px solid #c9c5bf;border-radius:4px;padding:11px 13px;font:inherit;font-size:13px;background:#fff}
-.search:focus{border-color:var(--guinda)}
-.materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.material{display:flex;min-height:94px;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:5px;text-decoration:none;box-shadow:0 3px 12px #18223008;transition:transform .16s,border-color .16s,box-shadow .16s}
-.material:hover,.material:focus-visible{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 9px 22px #18223012;outline:none}
-.mat-title{font-size:13px;font-weight:700;color:#333;line-height:1.45}
-.mat-sub{display:block;margin-top:5px;font-size:10px;color:var(--muted)}
-.open{flex:0 0 auto;background:var(--guinda);color:#fff;padding:9px 12px;border-radius:4px;font-size:11px;font-weight:800;white-space:nowrap}
-.material:hover .open,.material:focus-visible .open{background:var(--guinda-dark)}
-.source{margin-top:22px;padding:14px 16px;border-radius:5px;background:#f4f0eb;border:1px solid #e6d7c2;font-size:11px;color:#4f4435}
-.source a{color:var(--guinda);font-weight:700}
-.pager{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:24px 0}
-.pager a{color:var(--guinda);font-size:12px;font-weight:800;text-decoration:none;padding:10px 13px;border:1px solid #d4d0c9;border-radius:4px;background:#fff}
-.pager a:hover{border-color:var(--gold);background:#f8f5f0}
-footer{background:var(--guinda-dark);color:#fff;padding:20px;text-align:center;font-size:11px;border-top:4px solid var(--gold)}
-footer span{color:#e0c9a7}
-@media(max-width:660px){.top-inner{min-height:72px;padding:13px 18px}.top-link{font-size:11px;padding:9px 11px}.wrap{margin-top:20px}.hero{padding:21px 19px}.materials{grid-template-columns:1fr}.tools{align-items:stretch;flex-direction:column}.search{width:100%}.pager{align-items:stretch}.pager a{max-width:49%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
-/* Shared portal finish */
-.hero{border-radius:14px;padding:32px;border-left-width:5px}.material{border-radius:10px;padding:20px;min-height:105px}.mat-title{font-size:14px}.mat-sub{font-size:11px}.search,.top-link,.open{border-radius:7px}.wrap{margin-top:36px}.hero h1{letter-spacing:-.035em}.materials{gap:16px}@media(max-width:560px){.hero{padding:24px}.material{padding:16px}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoyo Académico | DGETAyCM Aguascalientes</title>
+    <meta name="description" content="Materiales de apoyo docente, planeación didáctica, recursos NEM y directorio de planteles DGETAyCM en Aguascalientes.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="site-theme.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gobGuinda: '#691C32',
+                        gobGuindaOscuro: '#4D1223',
+                        gobDorado: '#BC955C',
+                        gobVerde: '#0C231E',
+                        gobGrisBg: '#F8F9FA',
+                        gobGrisTexto: '#333333'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        .accessibility-btn {
+            background-color: #BC955C;
+            border: 2px solid #ffffff;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #691C32;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4D1223;
+        }
+        .map-placeholder {
+            background-image: radial-gradient(#691C32 0.75px, transparent 0.75px), radial-gradient(#691C32 0.75px, #e5e7eb 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .academic-directory { display:flex; flex-direction:column; gap:1.25rem; }
+        .academic-directory-intro { background:#fff; border:1px solid #e5e7eb; border-left:4px solid #691C32; border-radius:14px; padding:1.25rem 1.5rem; }
+        .academic-kicker { color:#691C32; font-size:.65rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+        .academic-directory-intro h3 { color:#691C32; font-weight:800; font-size:1.15rem; margin:.35rem 0; }
+        .academic-directory-intro p { color:#5b616b; font-size:.82rem; max-width:760px; margin:0; line-height:1.6; }
+        .academic-area-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+        .area-card { display:flex; gap:.9rem; align-items:flex-start; min-height:158px; padding:1rem; border-radius:13px; background:#fff; border:1px solid #e5e7eb; box-shadow:0 2px 8px #1118270a; text-decoration:none; transition:transform .16s,box-shadow .16s,border-color .16s; }
+        .area-card:hover,.area-card:focus-visible { transform:translateY(-2px); border-color:#BC955C; box-shadow:0 8px 20px #11182714; outline:none; }
+        .area-icon { flex:0 0 38px; height:38px; display:grid; place-items:center; border-radius:10px; color:#BC955C; background:#691C3210; }
+        .area-body { display:flex; flex:1; min-width:0; flex-direction:column; }
+        .area-body strong { color:#691C32; font-size:.8rem; line-height:1.4; }
+        .area-body small { color:#5c626c; font-size:.68rem; line-height:1.5; margin-top:.35rem; }
+        .area-open { color:#691C32; font-size:.68rem; font-weight:800; margin-top:auto; padding-top:.75rem; }
+        .academic-source { background:#fff8ec; border:1px solid #ead8bd; border-radius:10px; padding:.8rem 1rem; color:#514433; font-size:.72rem; }
+        .academic-source a { color:#691C32; font-weight:800; }
+        @media(max-width:900px){.academic-area-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+        @media(max-width:560px){.academic-area-grid{grid-template-columns:1fr;}.area-card{min-height:unset;}}
+
+        .search-results { max-height:min(62vh,28rem); overflow:auto; margin-top:.55rem; }
+        .search-hint,.search-summary { margin:0; padding:.55rem .4rem; color:#62646b; font-size:.68rem; line-height:1.45; }
+        .search-summary { border-bottom:1px solid #e5e7eb; font-weight:700; }
+        .search-result { display:block; padding:.65rem .55rem; border-bottom:1px solid #eceef1; border-radius:.35rem; color:#333; text-decoration:none; }
+        .search-result:hover,.search-result:focus-visible { background:#691c320c; outline:2px solid #bc955c; outline-offset:-2px; }
+        .search-result strong { display:block; color:#691C32; font-size:.72rem; line-height:1.35; }
+        .search-result small { display:block; margin-top:.18rem; color:#62646b; font-size:.62rem; line-height:1.4; }
+        .search-result em { display:inline-block; margin-top:.28rem; color:#8b6b3e; font-size:.57rem; font-style:normal; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+    </style>
+<style>a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f0bd57!important;outline-offset:3px}body.high-contrast,body.high-contrast main,body.high-contrast section,body.high-contrast article,body.high-contrast aside,body.high-contrast nav,body.high-contrast header,body.high-contrast footer,body.high-contrast div{background-color:#000!important;color:#fff!important}body.high-contrast h1,body.high-contrast h2,body.high-contrast h3,body.high-contrast p,body.high-contrast span,body.high-contrast label,body.high-contrast small{color:#fff!important}body.high-contrast a,body.high-contrast button{color:#ffeb72!important}body.high-contrast input,body.high-contrast select{background:#fff!important;color:#000!important}</style><style>.offer-home{margin:16px 0;font-size:12px;line-height:1.5}.offer-home h4{font-weight:800;color:#691634;margin-bottom:6px}.offer-home ul{list-style:disc;padding-left:17px}.offer-home li{margin:5px 0}.offer-home a{text-decoration:underline;text-underline-offset:3px}</style></head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+<!-- HEADER INSTITUCIONAL OFICIAL -->
+    <header class="site-header w-full sticky top-0 z-40 bg-gobGuinda text-white shadow-md">
+        <!-- Top Utility Bar -->
+        <div class="site-header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="site-brand-row flex items-center justify-between h-16 border-b border-white/10">
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <button id="accessibilityToggle" type="button" aria-controls="accessibilityModal" aria-expanded="false" aria-label="Abrir herramientas de accesibilidad" onclick="toggleAccessibilityModal()" class="accessibility-btn text-white p-2 rounded-full hover:opacity-90 focus:outline-none transition-transform hover:scale-105" title="Opciones de Accesibilidad">
+                        <i class="fas fa-child text-xl"></i>
+                    </button>
+                    
+                    <a href="#inicio" class="flex items-center space-x-3" aria-label="Ir al inicio de DGETAyCM Aguascalientes">
+                        <div class="flex items-center">
+                            <i class="fas fa-landmark text-2xl text-gobDorado mr-2"></i>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-xs sm:text-sm tracking-wider uppercase leading-tight">Gobierno de</span>
+                                <span class="font-black text-base sm:text-lg tracking-wider uppercase leading-none">México</span>
+                            </div>
+                        </div>
+                        <span class="text-white/40 text-2xl font-light hidden md:inline">|</span>
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gobDorado font-semibold uppercase tracking-widest hidden sm:inline">SEP · Subsecretaría de Educación Media Superior</span>
+                            <span class="font-extrabold text-sm sm:text-base md:text-lg text-white tracking-tight">DGETAyCM <span class="text-xs font-normal text-gray-200 bg-white/20 px-2 py-0.5 rounded-full ml-1">Aguascalientes</span></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-3 sm:space-x-6">
+                    <nav class="hidden lg:flex space-x-4 text-xs font-medium text-gray-200">
+                        <a href="https://www.gob.mx/tramites" target="_blank" rel="noopener noreferrer" class="hover:text-gobDorado transition-colors">Trámites</a>
+                        <a href="https://www.gob.mx/gobierno" target="_blank" rel="noopener noreferrer" class="hover:text-gobDorado transition-colors">Gobierno</a>
+                    </nav>
+                    
+                    <div class="relative">
+                        <button type="button" onclick="toggleSearchBar()" class="p-2 rounded-full hover:bg-white/10 transition-colors text-white focus:outline-none" aria-label="Buscar" aria-controls="searchDropdown" aria-expanded="false">
+                            <i class="fas fa-search text-lg"></i>
+                        </button>
+                        <div id="searchDropdown" class="hidden absolute right-0 mt-2 w-80 max-w-[calc(100vw-1.5rem)] bg-white text-gray-800 rounded-lg shadow-xl p-3 z-50 border border-gray-200">
+                            <div class="flex items-center" role="search">
+                                <input type="search" id="searchInput" placeholder="Buscar en todo el sitio..." aria-label="Buscar en todo el sitio" aria-controls="searchResults" class="w-full text-xs px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gobGuinda">
+                                <button type="button" onclick="executeSearch()" aria-label="Buscar" class="bg-gobGuinda text-white px-3 py-2 rounded-r-md text-xs hover:bg-gobGuindaOscuro">
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div id="searchResults" class="search-results" role="region" aria-live="polite" aria-label="Resultados de búsqueda"><p class="search-hint">Escribe al menos 2 letras para buscar planteles y materiales.</p></div>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-md text-white hover:bg-white/10 focus:outline-none" aria-label="Abrir menú de navegación" aria-controls="mobileMenu" aria-expanded="false">
+                        <i id="mobileMenuIcon" class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Navigation Bar -->
+            <nav class="site-primary-nav hidden lg:flex items-center justify-between py-2 text-xs md:text-sm font-semibold tracking-wide" aria-label="Navegación principal">
+                <a href="#inicio" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">Inicio</a>
+                <a href="#planteles" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">Planteles en Ags</a>
+                <a href="brigadas.html" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">BEDR</a>
+                <a href="#academia" class="py-2 px-3 text-gobDorado font-bold bg-white/10 rounded border border-gobDorado/40 flex items-center gap-1 shadow-sm">
+                    <i class="fas fa-book-open text-xs"></i> Academia / NEM
+                </a>
+                <a href="#difusion" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">Difusión y comunicación</a>
+                <a href="#convocatorias" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">Convocatorias</a>
+                <a href="#investigacion" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors">Investigación</a>
+                <a href="https://dgetaycm.sep.gob.mx/" target="_blank" rel="noopener noreferrer" class="py-2 px-3 text-white hover:text-gobDorado hover:bg-white/5 rounded transition-colors inline-flex items-center gap-1" aria-label="Abrir el sitio oficial de DGETAyCM en una pestaña nueva">DGETAyCM <i class="fas fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobileMenu" class="site-mobile-nav hidden lg:hidden bg-gobGuindaOscuro border-t border-white/10 px-4 pt-2 pb-4 space-y-1">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block py-2 text-sm text-white hover:text-gobDorado">Inicio</a>
+            <a href="#planteles" onclick="toggleMobileMenu()" class="block py-2 text-sm text-white hover:text-gobDorado">Planteles en Ags</a>
+            <a href="brigadas.html" class="block py-2 text-sm text-white hover:text-gobDorado">BEDR</a>
+            <a href="#academia" onclick="toggleMobileMenu()" class="block py-2 text-sm font-bold text-gobDorado bg-white/10 px-3 rounded">Academia y Recursos NEM</a>
+            <a href="#difusion" onclick="toggleMobileMenu()" class="block py-2 text-sm text-white hover:text-gobDorado">Difusión y comunicación</a>
+            <a href="#convocatorias" onclick="toggleMobileMenu()" class="block py-2 text-sm text-white hover:text-gobDorado">Convocatorias</a>
+            <a href="#investigacion" onclick="toggleMobileMenu()" class="block py-2 text-sm text-white hover:text-gobDorado">Investigación</a>
+            <a href="https://dgetaycm.sep.gob.mx/" target="_blank" rel="noopener noreferrer" class="block py-2 text-sm text-white hover:text-gobDorado" aria-label="Abrir el sitio oficial de DGETAyCM en una pestaña nueva">Sitio oficial DGETAyCM <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1" aria-hidden="true"></i></a>
+        </div>
+    </header>
+<section id="abc-encabezado" class="abc-header-banner" aria-label="Programa El ABC de las emociones">
+            <!-- Slide 1: Salud Mental / Línea de la Vida -->
+            <div class="abc-header-content w-full py-8 px-4 sm:px-8 md:px-16 transition-opacity duration-500 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-6">
+                <div class="bg-white text-gobGuinda p-4 sm:p-6 rounded-2xl shadow-xl flex items-center space-x-4 max-w-md w-full border-l-8 border-gobDorado">
+                    <div class="text-4xl sm:text-5xl text-gobGuinda">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-bold text-gray-500 block">Salud Mental para las y los Jóvenes</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight">El ABC <span class="text-sm font-normal text-gray-600">de las</span></h2>
+                        <p class="text-3xl sm:text-4xl font-black text-gobGuinda tracking-wide">EMOCIONES</p><a href="abc-emociones.html" class="inline-block mt-3 text-sm font-bold underline">Conoce el programa y la ruta de atención →</a>
+                    </div>
+                </div>
+
+                <div class="text-white text-center md:text-left flex-1 flex flex-col justify-center items-center md:items-start">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium tracking-wide text-gray-100">Si necesitas ayuda, llama a</span>
+                    <h2 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight my-1 drop-shadow-md">
+                        Línea de la vida
+                    </h2>
+                    <div class="bg-gobDorado text-gobGuinda font-black text-2xl sm:text-4xl md:text-5xl px-6 py-2 rounded-2xl shadow-lg border-2 border-white my-2 tracking-wider">
+                        800 911 2000
+                    </div>
+                    <p class="text-xs sm:text-sm text-gray-200 mt-1 font-light">
+                        Atención personalizada sobre <strong class="font-bold">salud mental y adicciones</strong> todos los días, las <strong class="font-bold">24 horas</strong>.
+                    </p>
+                </div>
+            </div>
+
+</section>
+
+
+<section id="inicio" class="academic-hero" aria-labelledby="portalTitle"><div class="hero-layout"><div><span class="hero-eyebrow">DGETAyCM · Aguascalientes</span><h1 id="portalTitle">Herramientas para<br><span>enseñar y transformar.</span></h1><p>Tu espacio de apoyo académico. Encuentra programas de estudio, planeaciones didácticas y recursos para fortalecer tu práctica docente.</p><div class="hero-actions"><a class="hero-primary" href="#academia">Explorar recursos académicos <i class="fas fa-arrow-right" aria-hidden="true"></i></a><a class="hero-secondary" href="#planteles">Encontrar un plantel ↗</a></div><div class="hero-footnote"><span><i class="fas fa-book-open" aria-hidden="true"></i> Recursos NEM</span><span><i class="fas fa-location-dot" aria-hidden="true"></i> 8 planteles conectados</span></div></div><aside class="hero-resource"><span class="hero-eyebrow">Empieza aquí</span><h2>Tu próxima clase,<br>un paso más cerca.</h2><a href="academia/planeaciones-1o-3o.html"><span>01</span><div><strong>Planeación didáctica</strong><small>Organiza tus actividades y aprendizajes</small></div><b>↗</b></a><a href="academia/programas-1o-3o.html"><span>02</span><div><strong>Programas de estudio</strong><small>Consulta contenidos y progresiones</small></div><b>↗</b></a><a href="academia/mallas-curriculares.html"><span>03</span><div><strong>Mallas curriculares</strong><small>Explora la estructura de formación</small></div><b>↗</b></a><div class="hero-resource-label">APRENDER · COMPARTIR · CRECER</div></aside></div></section>
+    <!-- BANNER CARRUSEL PRINCIPAL -->
+    <section id="avisos" class="relative w-full bg-gobGuinda overflow-hidden">
+        <div id="carouselContainer" class="relative min-h-[220px] sm:min-h-[280px] md:min-h-[340px] flex items-center">
+            
+            <!-- Slide 2: Portal de Recursos NEM en Aguascalientes -->
+            <div class="w-full py-8 px-4 sm:px-8 md:px-16 transition-opacity duration-500 max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+                    <div class="space-y-3 text-center md:text-left max-w-2xl">
+                        <span class="bg-gobDorado text-gobGuinda text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Novedades Pedagógicas</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">Marco Curricular Común NEM en Aguascalientes</h2>
+                        <p class="text-sm sm:text-base text-gray-200">Consulta la malla curricular 2026, programas de estudio, formatos de planeación y recursos organizados por sección para los planteles DGETAyCM del Estado.</p>
+                        <div class="pt-2">
+                            <a href="#academia" class="inline-block bg-white text-gobGuinda hover:bg-gobDorado hover:text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-lg shadow-lg transition-all">
+                                Explorar Recurso Docente <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center items-center p-6 bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm">
+                        <i class="fas fa-graduation-cap text-8xl text-gobDorado"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BARRA DE AVISOS -->
+    <div class="directory-notice bg-gobDorado text-gobGuinda font-semibold py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm">
+            <div class="flex items-center space-x-2">
+                <span class="bg-gobGuinda text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded">DIRECTORIO</span>
+                <span>Representación Estatal en Aguascalientes · Direcciones oficiales de los 8 planteles actualizadas</span>
+            </div>
+            <a href="#planteles" class="underline hover:text-white transition-colors mt-1 sm:mt-0 text-xs font-bold">Ver directorio de planteles &rarr;</a>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="contenido" class="page-content flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+        <section aria-labelledby="brigadas-title" class="rounded-2xl bg-white border border-stone-200 p-6 sm:p-8 shadow-sm"><p class="text-xs font-bold tracking-widest uppercase text-gobGuinda">Formación en comunidad</p><h2 id="brigadas-title" class="text-2xl sm:text-3xl font-bold text-gobGuinda mt-2">Brigadas de Educación para el Desarrollo Rural</h2><p class="text-gray-600 mt-3 max-w-3xl">Conoce a las Brigadas 16 y 108, sus actividades comunitarias y las vías para consultar sus cursos de capacitación.</p><a href="brigadas.html" class="inline-block mt-4 font-bold text-gobGuinda underline">Conocer las brigadas y sus actividades →</a></section>
+
+        <!-- PRESENTACIÓN INSTITUCIONAL -->
+
+
+        <!-- SECCIÓN DIRECTORIO Y MAPA DE PLANTELES (8 PLANTELES CON DIRECCIONES EXACTAS) -->
+<a class="abc-callout" href="abc-emociones.html"><span>BIENESTAR Y CONVIVENCIA</span><strong>El ABC de las emociones</strong><p>Guías, videos y orientación para el cuidado socioemocional y la atención de la violencia escolar.</p><b>Conocer el programa y cómo actuar ↗</b></a>
+        <section id="academia" class="scroll-mt-24 space-y-6">
+            <div class="section-heading border-l-4 border-gobGuinda pl-4 py-1 flex flex-col sm:flex-row sm:items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gobGuinda flex items-center gap-2">
+                        <i class="fas fa-folder-open text-gobDorado"></i> Repositorio de Recursos y Planeaciones Docentes
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 mt-0.5">
+                        Acervo de materiales pedagógicos organizados según las secciones del Padlet del Área Académica; consulta modelos curriculares, programas, planeaciones y guías.
+                    </p>
+                </div>
+                <span class="text-xs font-semibold bg-gobGuinda/10 text-gobGuinda px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">
+                    Área Académica
+                </span>
+            </div>
+
+            <!-- Banner SÍNTESIS EXPLICATIVA PARA DOCENTES -->
+            <div class="academic-highlight bg-gradient-to-r from-gobGuinda to-gobGuindaOscuro text-white rounded-2xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+                <div class="relative z-10 space-y-4 max-w-3xl">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gobDorado">
+                        Estimado Personal Docente y Directivo:
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-100 leading-relaxed">
+                        En este espacio encontrarán una curaduría integral de materiales normativos, curriculares y didácticos diseñados para optimizar su práctica educativa frente a grupo. Este repositorio reúne las publicaciones del área académica en páginas temáticas, con descripciones breves y acceso directo a cada material del Padlet.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
+                        <div class="flex items-start space-x-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                            <i class="fas fa-check-circle text-gobDorado mt-0.5"></i>
+                            <span><strong>Agiliza tu planeación:</strong> Utiliza plantillas y secuencias de 1.º, 3.º y 5.º semestre.</span>
+                        </div>
+                        <div class="flex items-start space-x-2 bg-white/10 p-2.5 rounded-lg border border-white/10">
+                            <i class="fas fa-check-circle text-gobDorado mt-0.5"></i>
+                            <span><strong>Alineación a la NEM:</strong> Programas estructurados por categorías, subcategorías y metas.</span>
+                        </div>
+                    </div>
+                </div>
+                <i class="fas fa-book-reader absolute -right-10 -bottom-10 text-9xl text-white/5 pointer-events-none"></i>
+            </div>
+
+            <!-- DIRECTORIO DE PÁGINAS DEPENDIENTES DEL ÁREA ACADÉMICA -->
+            <div class="academic-directory">
+                <div class="academic-directory-intro">
+                    <span class="academic-kicker">Organización del Padlet del Área Académica</span>
+                    <h3>Explora los materiales por sección</h3>
+                    <p>Selecciona un área para consultar su descripción y abrir cada publicación. Las páginas conservan los nombres y el orden temático del tablero fuente.</p>
+                </div>
+                <div class="academic-area-grid">
+                    <a class="area-card" href="academia/mallas-curriculares.html" aria-label="Abrir sección: Mallas curriculares"><span class="area-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></span><span class="area-body"><strong>Mallas curriculares</strong><small>4 materiales · Cuadros curriculares para Bachillerato Tecnológico y modalidad autoplaneada. La publicación 2026 aparece primero para facilitar la consulta de la versión más reciente.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/sistema-nacional-nem.html" aria-label="Abrir sección: Sistema Nacional de Bachillerato de la NEM"><span class="area-icon"><i class="fas fa-landmark" aria-hidden="true"></i></span><span class="area-body"><strong>Sistema Nacional de Bachillerato de la NEM</strong><small>4 materiales · Documentos de referencia sobre el Modelo Educativo 2025, la actualización del MCCEMS y el currículum ampliado.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/programas-1o-3o.html" aria-label="Abrir sección: Programas de estudio · 1.º y 3.º semestre"><span class="area-icon"><i class="fas fa-book-open" aria-hidden="true"></i></span><span class="area-body"><strong>Programas de estudio · 1.º y 3.º semestre</strong><small>8 materiales · Material curricular y programas de referencia para los primeros semestres, organizados por áreas de conocimiento y recursos del MCCEMS.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/planeaciones-1o-3o.html" aria-label="Abrir sección: Formato de planeaciones · 1.º y 3.º semestre"><span class="area-icon"><i class="fas fa-file-pen" aria-hidden="true"></i></span><span class="area-body"><strong>Formato de planeaciones · 1.º y 3.º semestre</strong><small>1 materiales · Formato institucional para estructurar la planeación didáctica del periodo septiembre 2025–enero 2026.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/planeaciones-5o.html" aria-label="Abrir sección: Formatos de planeación · 5.º semestre"><span class="area-icon"><i class="fas fa-clipboard-list" aria-hidden="true"></i></span><span class="area-body"><strong>Formatos de planeación · 5.º semestre</strong><small>7 materiales · Plantillas de planeación para áreas de conocimiento, recursos sociocognitivos, componente laboral y currículum fundamental extendido.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/listas-cotejo-5o.html" aria-label="Abrir sección: Listas de cotejo · 5.º semestre"><span class="area-icon"><i class="fas fa-list-check" aria-hidden="true"></i></span><span class="area-body"><strong>Listas de cotejo · 5.º semestre</strong><small>7 materiales · Instrumentos EVA-Planea para retroalimentar planeaciones de las áreas de conocimiento, recursos sociocognitivos y módulo laboral.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/curso-planeaciones.html" aria-label="Abrir sección: Materiales del curso de planeaciones"><span class="area-icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></span><span class="area-body"><strong>Materiales del curso de planeaciones</strong><small>5 materiales · Presentaciones, ejemplos de redacción y documentos de apoyo para elaborar planeaciones didácticas.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/programas-6o.html" aria-label="Abrir sección: Programas de estudio · 6.º semestre"><span class="area-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></span><span class="area-body"><strong>Programas de estudio · 6.º semestre</strong><small>1 materiales · Acceso a progresiones, programas y orientaciones curriculares para las asignaturas de sexto semestre.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/programas-5o.html" aria-label="Abrir sección: Programas de estudio · 5.º semestre"><span class="area-icon"><i class="fas fa-book" aria-hidden="true"></i></span><span class="area-body"><strong>Programas de estudio · 5.º semestre</strong><small>4 materiales · Programas de Conciencia Histórica, Ciencias Naturales, Inglés y Temas Selectos de Matemáticas para quinto semestre.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/componente-profesional.html" aria-label="Abrir sección: Programas · componente profesional"><span class="area-icon"><i class="fas fa-gears" aria-hidden="true"></i></span><span class="area-body"><strong>Programas · componente profesional</strong><small>5 materiales · Programas de formación técnica en las carreras agropecuaria, programación, logística y administración de recursos humanos.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/fundamental-extendido.html" aria-label="Abrir sección: Componente fundamental extendido"><span class="area-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></span><span class="area-body"><strong>Componente fundamental extendido</strong><small>4 materiales · Programas de asignaturas optativas para ampliar la formación fundamental del estudiantado.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/autoplaneado-2025.html" aria-label="Abrir sección: Sistema Autoplaneado · Modelo 2025"><span class="area-icon"><i class="fas fa-route" aria-hidden="true"></i></span><span class="area-body"><strong>Sistema Autoplaneado · Modelo 2025</strong><small>7 materiales · Mapa, estructura modular, plan de estudios y programas del sistema Autoplaneado Modelo 2025.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/fundamental-escolarizado-2023.html" aria-label="Abrir sección: Fundamental extendido · escolarizado Modelo 2023"><span class="area-icon"><i class="fas fa-school" aria-hidden="true"></i></span><span class="area-body"><strong>Fundamental extendido · escolarizado Modelo 2023</strong><small>20 materiales · Programas de asignaturas optativas para la modalidad escolarizada. Se separan de los recursos del sistema Autoplaneado para facilitar la consulta.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/materiales-ecosistemas.html" aria-label="Abrir sección: Materiales didácticos · Ecosistemas"><span class="area-icon"><i class="fas fa-leaf" aria-hidden="true"></i></span><span class="area-body"><strong>Materiales didácticos · Ecosistemas</strong><small>2 materiales · Guía de autoestudio y respuestas para el material de Ecosistemas.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                    <a class="area-card" href="academia/materiales-ingles.html" aria-label="Abrir sección: Materiales didácticos · Inglés"><span class="area-icon"><i class="fas fa-language" aria-hidden="true"></i></span><span class="area-body"><strong>Materiales didácticos · Inglés</strong><small>4 materiales · Guías de autoestudio y claves de respuestas de Inglés III y V. Esta página corrige la segunda sección de Padlet, que aparece duplicada con el título “Ecosistemas”.</small><span class="area-open">Ver materiales <i class="fas fa-arrow-right" aria-hidden="true"></i></span></span></a>
+                </div>
+                <p class="academic-source"><i class="fas fa-circle-info" aria-hidden="true"></i> Los documentos se abren desde sus publicaciones originales. <a href="https://padlet.com/anitacastroacademica/materiales-del-area-academica-kb3c3dyedi7l66vm" target="_blank" rel="noopener noreferrer">Abrir el Padlet completo</a>.</p>
+            </div>
+        </section>
+
+        <section id="planteles" class="scroll-mt-24 space-y-6">
+            <div class="section-heading border-l-4 border-gobGuinda pl-4 py-1 flex flex-col sm:flex-row sm:items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gobGuinda flex items-center gap-2">
+                        <i class="fas fa-map-marked-alt text-gobDorado"></i> Directorio de planteles en Aguascalientes
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 mt-0.5">
+                        Ubicación oficial, municipios y direcciones exactas de los 8 centros educativos
+                    </p>
+                </div>
+                <!-- Filtro por Municipio -->
+                <div class="mt-3 sm:mt-0 flex items-center space-x-2">
+                    <label for="filterMunicipio" class="text-xs font-bold text-gray-700">Municipio:</label>
+                    <select id="filterMunicipio" onchange="filterPlanteles()" class="text-xs bg-white border border-gray-300 rounded-lg p-2 focus:ring-1 focus:ring-gobGuinda focus:outline-none">
+                        <option value="todos">Todos los Municipios</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Asientos">Asientos</option>
+                        <option value="Calvillo">Calvillo</option>
+                        <option value="Cosío">Cosío</option>
+                        <option value="El Llano">El Llano</option>
+                        <option value="Pabellón de Arteaga">Pabellón de Arteaga</option>
+                        <option value="Rincón de Romos">Rincón de Romos</option>
+                        <option value="San Francisco de los Romo">San Francisco de los Romo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="directory-search"><label for="plantelSearch">Buscar un plantel</label><div><i class="fas fa-search" aria-hidden="true"></i><input id="plantelSearch" type="search" placeholder="Nombre, número o municipio…" oninput="filterPlanteles()"><button type="button" onclick="resetPlanteles()">Limpiar filtros</button></div><p id="plantelCount" role="status">8 planteles disponibles</p></div>
+            <!-- RESUMEN DEL DIRECTORIO -->
+            <div class="directory-callout">
+                <span class="directory-callout-icon" aria-hidden="true"><i class="fas fa-location-dot"></i></span>
+                <div class="directory-callout-copy"><span class="directory-callout-kicker">Directorio estatal</span><h3>Encuentra tu plantel</h3><p>Filtra por municipio para consultar dirección, teléfono, mapa y redes sociales de los centros educativos.</p></div>
+                <div class="directory-callout-count"><strong>8</strong><span>planteles</span></div>
+                <a class="directory-callout-action" href="#plantelesGrid">Consultar directorio <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+            </div>
+
+            <p class="social-note">Instagram: enlace disponible para CBTa 61, publicado en su sitio institucional. En los demás planteles no se confirmó una cuenta oficial. Revisión: 18 de octubre de 2026.</p>
+            <p id="plantelEmpty" class="hidden empty-directory">No encontramos coincidencias. Prueba con otro nombre o <button type="button" onclick="resetPlanteles()">limpia los filtros</button>.</p>
+            <!-- GRID DE PLANTELES CON SUS DIRECCIONES EXACTAS -->
+            <a href="planteles.html" style="display:inline-block;background:#691634;color:white;padding:12px 18px;border-radius:8px;font-weight:700;margin:0 0 20px;text-decoration:none">Conoce los planteles: carreras, eventos y fotografías →</a>
+            <div id="plantelesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- Plantel 1: CBTA 30 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Pabellón de Arteaga" id="plantel-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 30</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Pabellón de Arteaga</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 30</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> Granja Huentepec S/N, Antigua Carretera al Águila, C.P. 20670, Pabellón de Arteaga, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#programacion">Técnico en Programación</a></li><li><a href="carreras.html#ganadera">Técnico en Explotación Ganadera</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#inteligencia-artificial">Técnico en Inteligencia Artificial</a></li><li><a href="carreras.html#administracion-emprendimientos">Técnico en Administración de Emprendimientos</a></li><li><a href="carreras.html#agropecuario-sabatino">Técnico Agropecuario · modalidad autoplaneada sabatina</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (465) 688-1714</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=Granja+Huentepec+SN+Antigua+Carretera+al+Aguila+20670+Pabellon+de+Arteaga+Ags" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/pages/Cbta-Treinta-Pabell%C3%B3n-de-Art-Ags/138383949635084" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CBTa 30" title="Perfil de Facebook del CBTa 30" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 2: CBTA 40 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Asientos" id="plantel-2">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 40</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Asientos</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 40</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> Av. Jesús R. Macías No. 140, Carretera Ags-Loreto, C.P. 20700, Villa Juárez, Asientos, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#administracion-emprendimientos">Técnico en Administración de Emprendimientos</a></li><li><a href="carreras.html#agropecuario-sabatino">Técnico Agropecuario · modalidad autoplaneada sabatina</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (496) 962-0278</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=Av+Jesus+R+Macias+140+Villa+Juarez+Asientos+Ags" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/search/pages/?q=CBTa%2040%20Villa%20Juarez%20Aguascalientes" target="_blank" rel="noopener noreferrer" aria-label="Buscar el CBTa 40 en Facebook" title="Buscar el CBTa 40 en Facebook" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 3: CBTA 61 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Calvillo" id="plantel-3">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 61</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Calvillo</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 61</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> C. Guillermo Prieto No. 225, Liberal, C.P. 20804, Calvillo, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#programacion">Técnico en Programación</a></li><li><a href="carreras.html#emprendimiento">Técnico en Administración para el Emprendimiento Agropecuario</a></li><li><a href="carreras.html#administracion-emprendimientos">Técnico en Administración de Emprendimientos</a></li><li><a href="carreras.html#diseno-grafico">Técnico en Diseño Gráfico Digital</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (495) 956-3407</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=Guillermo+Prieto+225+Calvillo+Ags" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/cbta.calvillo/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CBTa 61" title="Perfil de Facebook del CBTa 61" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a><a class="instagram-link" href="https://www.instagram.com/cbta.calvillo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram del CBTa 61, abre en otra pestaña" title="Instagram · enlazado desde cbta61.edu.mx"><i class="fab fa-instagram" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 4: CBTA 103 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Cosío" id="plantel-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 103</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Cosío</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">CBTA No. 103 'Saturnino Herrán'</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> México 45, Conasupo, C.P. 20460, Cosío, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#programacion">Técnico en Programación</a></li><li><a href="carreras.html#viticultura">Técnico en Viticultura</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (458) 987-0853</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=Mexico+45+Conasupo+Cosio+Ags" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/cbta103cosio/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CBTa 103" title="Perfil de Facebook del CBTa 103" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 5: CBTA 204 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="El Llano" id="plantel-5">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 204</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> El Llano</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 204</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> C. 5 de Mayo S/N, Triana, C.P. 20330, Palo Alto, El Llano, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#inteligencia-artificial">Técnico en Inteligencia Artificial</a></li><li><a href="carreras.html#administracion-emprendimientos">Técnico en Administración de Emprendimientos</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (496) 967-3241</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=5+de+Mayo+Palo+Alto+El+Llano+Ags" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/cbta204PaloAlto/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CBTa 204" title="Perfil de Facebook del CBTa 204" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 6: CBTA 205 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Rincón de Romos" id="plantel-6">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 205</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Rincón de Romos</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 205</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> Mazatl S/N, Col. Mazatl, C.P. 20413, Rincón de Romos, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#agropecuario">Técnico Agropecuario</a></li><li><a href="carreras.html#soporte">Técnico en Soporte y Mantenimiento de Equipos de Cómputo</a></li><li><a href="carreras.html#ofimatica">Técnico en Ofimática</a></li><li><a href="carreras.html#soporte-gestion">Técnico en Soporte y Gestión de Tecnologías Informáticas</a></li><li><a href="carreras.html#administracion-emprendimientos">Técnico en Administración de Emprendimientos</a></li><li><a href="carreras.html#agropecuario-sabatino">Técnico Agropecuario · modalidad autoplaneada sabatina</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-info-circle text-xs mr-1"></i> Sin teléfono publicado</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://www.google.com/maps/search/?api=1&query=CBTA+205+Mazatl+S%2FN+Colonia+Mazatl+20413+Rincon+de+Romos+Aguascalientes" target="_blank" rel="noopener noreferrer" class="text-gobGuinda font-bold hover:underline">Ver Mapa &rarr;</a><a href="https://www.facebook.com/214072608655985/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CBTa 205" title="Perfil de Facebook del CBTa 205" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 7: CBTA 338 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Aguascalientes" id="plantel-7">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-gobGuinda bg-gobGuinda/10 px-2.5 py-1 rounded">CBTA No. 338</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Aguascalientes</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Bachillerato Tecnológico Agropecuario No. 338</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> Colonia Villas del Río, en las instalaciones de la Universidad Tecnológica Metropolitana de Aguascalientes (UTMA), Aguascalientes, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#inteligencia-artificial">Técnico en Inteligencia Artificial</a></li><li><a href="carreras.html#logistica">Técnico en Logística</a></li><li><a href="carreras.html#robotica">Técnico en Robótica</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-info-circle text-xs mr-1"></i> Sin teléfono publicado</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://www.google.com/maps/search/?api=1&query=CBTA+338+Universidad+Tecnol%C3%B3gica+Metropolitana+de+Aguascalientes+Villas+del+R%C3%ADo" target="_blank" rel="noopener noreferrer" class="text-gobGuinda font-bold hover:underline">Ver Mapa &rarr;</a><a href="https://www.facebook.com/search/pages/?q=Centro%20de%20Bachillerato%20Tecnologico%20Agropecuario%20338%20Aguascalientes" target="_blank" rel="noopener noreferrer" aria-label="Buscar el CBTa 338 en Facebook" title="Buscar el CBTa 338 en Facebook" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+                <!-- Plantel 8: CETAC 05 -->
+                <div class="plantel-card bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-gobGuinda transition-all flex flex-col justify-between" data-municipio="Aguascalientes" id="plantel-8">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-blue-800 bg-blue-100 px-2.5 py-1 rounded">CETAC No. 05</span>
+                            <span class="text-[10px] text-gray-500 font-semibold"><i class="fas fa-building text-gobDorado"></i> Aguascalientes</span>
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800">Centro de Estudios Tecnológicos en Aguas Continentales No. 05</h3>
+                        <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                            <i class="fas fa-map-marker-alt text-red-600 mr-1"></i> Haciendas de Aguascalientes, C.P. 20196, Aguascalientes, Ags.
+                        </p>
+                    </div>
+                    <div class="offer-home"><h4>Oferta educativa · octubre 2026</h4><ul><li><a href="carreras.html#recursos-humanos">Técnico en Administración de Recursos Humanos</a></li><li><a href="carreras.html#acuacultura">Técnico en Acuacultura</a></li><li><a href="carreras.html#hidricos">Técnico en Recursos Hídricos</a></li><li><a href="carreras.html#logistica">Técnico en Logística</a></li><li><a href="carreras.html#sig">Técnico en Sistemas de Información Geográfica</a></li></ul></div>
+                    <div class="pt-3 border-t border-gray-100 mt-3 flex justify-between items-center text-xs">
+                        <span class="text-gray-500"><i class="fas fa-phone text-xs mr-1"></i> (449) 915-1396</span>
+                        <div class="inline-flex items-center gap-2"><a href="https://maps.google.com/?q=Haciendas+de+Aguascalientes+CETAC+05+Aguascalientes" target="_blank" class="text-gobGuinda font-bold hover:underline" rel="noopener noreferrer">Ver Mapa &rarr;</a><a href="https://www.facebook.com/CETAC05Oficial/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Facebook del CETAC 05" title="Perfil de Facebook del CETAC 05" class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#1464cc] focus:outline-none focus:ring-2 focus:ring-[#1877F2] focus:ring-offset-2 transition-colors"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RECURSOS ACADÉMICOS Y PLANEACIONES DOCENTES NEM -->
+        <section class="institutional-links-section scroll-mt-24 space-y-5" aria-labelledby="institutionalLinksTitle">
+            <div class="section-heading"><div><span class="section-eyebrow">Información institucional</span><h2 id="institutionalLinksTitle">Noticias, convocatorias e investigación</h2><p>Accesos directos a los contenidos publicados en el portal nacional de la DGETAyCM.</p></div></div>
+            <div class="institutional-links-grid">
+                <article id="difusion" class="institutional-link-card"><span class="institutional-link-icon" aria-hidden="true"><i class="fas fa-bullhorn"></i></span><div><span class="section-eyebrow">Difusión y comunicación</span><h3>Noticias de interés</h3><p>Consulta información y comunicados recientes de la Dirección General.</p></div><a href="https://dgetaycm.sep.gob.mx/" target="_blank" rel="noopener noreferrer">Ir al portal nacional <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+                <article id="convocatorias" class="institutional-link-card"><span class="institutional-link-icon" aria-hidden="true"><i class="fas fa-file-signature"></i></span><div><span class="section-eyebrow">Participación</span><h3>Convocatorias</h3><p>Revisa los procesos y publicaciones vigentes para la comunidad DGETAyCM.</p></div><a href="https://dgetaycm.sep.gob.mx/Convocatorias" target="_blank" rel="noopener noreferrer">Consultar convocatorias <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+                <article id="investigacion" class="institutional-link-card"><span class="institutional-link-icon" aria-hidden="true"><i class="fas fa-flask"></i></span><div><span class="section-eyebrow">Conocimiento e innovación</span><h3>Investigación</h3><p>Explora foros, convocatorias y materiales de investigación de la DGETAyCM.</p></div><a href="https://dgetaycm.sep.gob.mx/Investigaci%C3%B3n" target="_blank" rel="noopener noreferrer">Explorar investigación <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL ESTILO GOBIERNO DE MÉXICO -->
+    <footer class="site-footer bg-gobGuinda text-white border-t-4 border-gobDorado mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs sm:text-sm">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-landmark text-3xl text-gobDorado"></i>
+                        <div>
+                            <p class="font-bold text-sm tracking-wide">Gobierno de México</p>
+                            <p class="text-[10px] text-gray-300">DGETAyCM Aguascalientes</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Representación Estatal de la Dirección General de Educación Tecnológica Agropecuaria y Ciencias del Mar en el Estado de Aguascalientes.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gobDorado uppercase tracking-wider mb-3 text-xs">Enlaces Institucionales</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="https://www.gob.mx" target="_blank" class="hover:text-gobDorado" rel="noopener noreferrer">Gob.mx</a></li>
+                        <li><a href="https://www.gob.mx/sep" target="_blank" class="hover:text-gobDorado" rel="noopener noreferrer">Secretaría de Educación Pública</a></li>
+                        <li><a href="https://sems.gob.mx" target="_blank" class="hover:text-gobDorado" rel="noopener noreferrer">Subsecretaría de Educación Media Superior</a></li>
+                        <li><a href="https://dgetaycm.sep.gob.mx" target="_blank" class="hover:text-gobDorado" rel="noopener noreferrer">DGETAyCM Nacional</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gobDorado uppercase tracking-wider mb-3 text-xs">Ubicación y Contacto</h4>
+                    <p class="text-gray-300 leading-relaxed text-xs">
+                        <i class="fas fa-map-marker-alt text-gobDorado mr-1"></i> Aguascalientes, Ags., México.<br>
+                        <i class="fas fa-envelope text-gobDorado mr-1"></i> contacto.ags@dgetaycm.sep.gob.mx<br>
+                        <i class="fas fa-phone text-gobDorado mr-1"></i> (449) 910 5000 Ext. 4200
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-gobDorado uppercase tracking-wider mb-3 text-xs">Transparencia</h4>
+                    <ul class="space-y-2 text-gray-300 text-xs">
+                        <li><span>Aviso de privacidad: consulta el portal nacional</span></li>
+                        <li><a href="https://dgetaycm.sep.gob.mx/" target="_blank" rel="noopener noreferrer" class="hover:text-gobDorado">Portal nacional DGETAyCM ↗</a></li>
+                        <li><a href="#planteles" class="hover:text-gobDorado">Directorio de Planteles</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-gray-400">
+                <p>© 2026 Dirección General de Educación Tecnológica Agropecuaria y Ciencias del Mar (DGETAyCM) - Representación Aguascalientes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE ACCESIBILIDAD -->
+    <div id="accessibilityModal" role="dialog" aria-modal="true" aria-labelledby="accessibilityTitle" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-gray-800 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 id="accessibilityTitle" class="font-bold text-gobGuinda text-base flex items-center gap-2">
+                    <i class="fas fa-universal-access text-xl text-gobDorado"></i> Herramientas de Accesibilidad
+                </h3>
+                <button type="button" aria-label="Cerrar herramientas de accesibilidad" onclick="toggleAccessibilityModal()" class="text-gray-500 hover:text-black">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <button onclick="adjustFontSize(1)" class="w-full bg-gray-100 hover:bg-gobGuinda hover:text-white p-3 rounded-lg text-left font-semibold flex items-center justify-between">
+                    <span>Aumentar tamaño de letra</span>
+                    <i class="fas fa-font text-base"></i>
+                </button>
+                <button onclick="adjustFontSize(-1)" class="w-full bg-gray-100 hover:bg-gobGuinda hover:text-white p-3 rounded-lg text-left font-semibold flex items-center justify-between">
+                    <span>Reducir tamaño de letra</span>
+                    <i class="fas fa-font text-xs"></i>
+                </button>
+                <button onclick="toggleHighContrast()" class="w-full bg-gray-100 hover:bg-gobGuinda hover:text-white p-3 rounded-lg text-left font-semibold flex items-center justify-between">
+                    <span>Modo Alto Contraste</span>
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+            <div class="text-right pt-2">
+                <button onclick="toggleAccessibilityModal()" class="bg-gobGuinda text-white text-xs px-4 py-2 rounded-lg font-bold">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="search-index.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Filtro de Planteles por Municipio
+        function filterPlanteles() {
+            const municipality = document.getElementById('filterMunicipio').value;
+            const query = normalizeSearchText(document.getElementById('plantelSearch').value.trim());
+            let count = 0;
+            document.querySelectorAll('.plantel-card').forEach(card => {
+                const match = (municipality === 'todos' || card.dataset.municipio === municipality) && normalizeSearchText(card.textContent).includes(query);
+                card.classList.toggle('hidden', !match);
+                if (match) count++;
+            });
+            document.getElementById('plantelCount').textContent = count + (count === 1 ? ' plantel encontrado' : ' planteles encontrados');
+            document.getElementById('plantelEmpty').classList.toggle('hidden', count !== 0);
+        }
+        function resetPlanteles() {
+            document.getElementById('filterMunicipio').value = 'todos';
+            document.getElementById('plantelSearch').value = '';
+            filterPlanteles();
+        }
+
+        // Navegación
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            const isOpen = !menu.classList.contains('hidden');
+            const button = document.querySelector('[aria-controls="mobileMenu"]');
+            const icon = document.getElementById('mobileMenuIcon');
+            button.setAttribute('aria-expanded', String(isOpen));
+            button.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-times', isOpen);
+        }
+
+        function normalizeSearchText(value) {
+            return (value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es');
+        }
+
+        function toggleSearchBar() {
+            const searchDropdown = document.getElementById('searchDropdown');
+            const button = document.querySelector('[aria-controls="searchDropdown"]');
+            searchDropdown.classList.toggle('hidden');
+            const isOpen = !searchDropdown.classList.contains('hidden');
+            button.setAttribute('aria-expanded', String(isOpen));
+            if (isOpen) document.getElementById('searchInput').focus();
+        }
+
+        function executeSearch() {
+            const input = document.getElementById('searchInput');
+            const results = document.getElementById('searchResults');
+            const query = normalizeSearchText(input.value.trim());
+            results.replaceChildren();
+            if (query.length < 2) {
+                const hint = document.createElement('p');
+                hint.className = 'search-hint';
+                hint.textContent = 'Escribe al menos 2 letras para buscar planteles y materiales.';
+                results.append(hint);
+                return;
+            }
+
+            const terms = query.split(/\s+/).filter(Boolean);
+            const matches = (window.DGETA_SEARCH_INDEX || []).map(item => {
+                const title = normalizeSearchText(item.title);
+                const haystack = normalizeSearchText([item.title, item.description, item.kind].join(' '));
+                if (!terms.every(term => haystack.includes(term))) return null;
+                const score = (title === query ? 100 : 0) + (title.startsWith(query) ? 35 : 0) + (title.includes(query) ? 20 : 0);
+                return { ...item, score };
+            }).filter(Boolean).sort((a,b) => b.score-a.score || a.title.localeCompare(b.title,'es'));
+
+            const summary = document.createElement('p');
+            summary.className = 'search-summary';
+            summary.textContent = matches.length ? `${matches.length} coincidencia${matches.length===1?'':'s'}${matches.length>10?' · mostrando las primeras 10':''}` : 'No se encontraron coincidencias. Prueba con otra palabra.';
+            results.append(summary);
+
+            matches.slice(0,10).forEach(item => {
+                const link = document.createElement('a');
+                link.className = 'search-result';
+                link.href = item.href;
+                if (item.external) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+                const title = document.createElement('strong');
+                title.textContent = item.title;
+                const description = document.createElement('small');
+                description.textContent = item.description;
+                const kind = document.createElement('em');
+                kind.textContent = item.kind;
+                link.append(title, description, kind);
+                if (!item.external) link.addEventListener('click', () => { document.getElementById('searchDropdown').classList.add('hidden'); document.querySelector('[aria-controls="searchDropdown"]').setAttribute('aria-expanded', 'false'); });
+                results.append(link);
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', executeSearch);
+        document.getElementById('searchInput').addEventListener('keydown', event => {
+            if (event.key === 'Enter') { event.preventDefault(); executeSearch(); }
+        });
+
+        // Accesibilidad
+        function toggleAccessibilityModal() {
+            const modal = document.getElementById('accessibilityModal');
+            const opening = modal.classList.contains('hidden');
+            modal.classList.toggle('hidden', !opening);
+            const toggle = document.getElementById('accessibilityToggle');
+            toggle.setAttribute('aria-expanded', String(opening));
+            if (opening) modal.querySelector('button').focus(); else toggle.focus();
+        }
+        document.addEventListener('keydown', event => {
+            const modal = document.getElementById('accessibilityModal');
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) { toggleAccessibilityModal(); return; }
+            if (event.key === 'Escape' && !document.getElementById('searchDropdown').classList.contains('hidden')) { toggleSearchBar(); document.querySelector('[aria-controls="searchDropdown"]').focus(); }
+            if (event.key === 'Tab' && !modal.classList.contains('hidden')) {
+                const buttons = [...modal.querySelectorAll('button')];
+                if (event.shiftKey && document.activeElement === buttons[0]) { event.preventDefault(); buttons[buttons.length - 1].focus(); }
+                else if (!event.shiftKey && document.activeElement === buttons[buttons.length - 1]) { event.preventDefault(); buttons[0].focus(); }
+            }
+        });
+
+        let currentZoom = 100;
+        function adjustFontSize(direction) {
+            currentZoom += direction * 10;
+            if (currentZoom < 80) currentZoom = 80;
+            if (currentZoom > 130) currentZoom = 130;
+            document.body.style.zoom = currentZoom + "%";
+        }
+
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+    </script>
+<a class="back-top" href="#inicio" aria-label="Volver al inicio"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+<script>
+const navigationLinks = document.querySelectorAll('.site-primary-nav a[href^="#"]');
+const sectionObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) navigationLinks.forEach(link => {const active = link.hash === '#' + entry.target.id; link.classList.toggle('nav-current', active); if(active) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');}); }); }, {rootMargin:'-20% 0px -55% 0px'});
+document.querySelectorAll('#inicio,#academia,#planteles,#difusion,#convocatorias,#investigacion').forEach(section => sectionObserver.observe(section));
+</script></body>
+</html>
